@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+}
+
+.calendar {
+  background-color: #ffffff;
+}
+
+.current-date {
+  background-color: #167e56;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.current-date .year {
+  font-size: 28px;
+}
+
+.current-date .month {
+  font-size: 20px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 20px;
+  font-weight: 700;
+}
+.weekdays div {
+  padding: 20px;
+  border: 1px solid #979797;
+  text-align: center;
+}
+.weekdays div:nth-child(6),
+.weekdays div:nth-child(7) {
+  color: rgb(150, 5, 5);
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.days div {
+  padding: 20px;
+  border: 1px solid #979797;
+  background-color: #dddddd;
+  color: #2dbeeb;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.days div:hover:not(.today) {
+  background-color: #262626;
+  border-color: #777;
+  cursor: pointer;
+}
+
+.days div:nth-child(7n),
+.days div:nth-child(6),
+.days div:nth-child(13),
+.days div:nth-child(20),
+.days div:nth-child(27),
+.days div:nth-child(34) {
+  background-color: rgb(243, 127, 127);
+  color: rgb(150, 5, 5);
+}
+
+.prev-month,
+.next-month {
+  opacity: 0.4;
+}
+
+div > .today {
+  background-color: #167e56;
+}
+
+.dropdown {
+  width: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown__button {
+  position: relative;
+  width: 200px;
+  text-align: center;
+  height: 46px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.dropdown__list {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  margin: 0;
+  padding: 5px;
+  list-style-type: none;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+  width: 100%;
+  z-index: 1;
+}
+.dropdown__list-year {
+  top: 96px;
+}
+
+.dropdown__item-month,
+.dropdown__item-year {
+  padding: 20px;
+  border: 1px solid #979797;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+
+.dropdown__item-month:hover,
+.dropdown__item-year:hover {
+  background-color: #262626;
+  color: white;
+}
+
+.dropdown__list--visible {
+  display: grid;
+}
+
+.date-input {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: #fff;
+}
+
+.date-input-day,
+.date-input-month,
+.date-input-year {
+  width: 24px;
+  border: none;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+.date-input-day {
+  margin-left: auto;
+}
+.date-input-year {
+  width: 40px;
+}
+
+.date-input-day::placeholder,
+.date-input-month::placeholder,
+.date-input-year::placeholder {
+  font-size: 14px;
+}
+
+.selectedDay {
+  background-color: rgb(226, 213, 97) !important;
+}
+
+.date-input-submit {
+  margin-left: auto;
+}
