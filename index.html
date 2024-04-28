@@ -14,8 +14,35 @@
         <div class="calendar">
 
             <div class="current-date">
+                <div>
+                    <div class="from" title="Флажок и правая кнопка мыши по дню">
+                        <span>От:</span>
+                        <input class="date-input-day-from" type="text" maxlength="2" placeholder="DD"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                        .
+                        <input class="date-input-month-from" type="text" maxlength="2" placeholder="MM"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                        .
+                        <input class="date-input-year-from" type="text" maxlength="4" placeholder="YYYY"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                        <input type="radio" id="chooseFromDate" name="interval">
+                    </div>
+                    <div class="to" title="Флажок и правая кнопка мыши по дню">
+                        <span>До:</span>
+                        <input class="date-input-day-to" type="text" maxlength="2" placeholder="DD"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                        .
+                        <input class="date-input-month-to" type="text" maxlength="2" placeholder="MM"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                        .
+                        <input class="date-input-year-to" type="text" maxlength="4" placeholder="YYYY"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                        <input type="radio" id="chooseToDate" name="interval">
+                    </div>
+                    <button class="resetInterval">reset</button>
+                </div>
                 <button class="prev" style="rotate: 180deg;">&#10151;</button>
-                <div class="date">
+                <div class="date" title="min 2000">
                     <div class="date-input">
                         <input class="date-input-day" type="text" maxlength="2" placeholder="DD"
                             onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
@@ -129,6 +156,7 @@
         </div>
 
     </div>
+    <script src="functions.js" type="module"></script>
     <script src="script.js" type="module"></script>
 </body>
 

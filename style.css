@@ -21,6 +21,34 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  position: relative;
+}
+.current-date .from,
+.current-date .to {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  display: flex;
+  background-color: white;
+  z-index: 2;
+}
+.current-date .from [type="radio"],
+.current-date .to [type="radio"] {
+  accent-color: rgb(16, 194, 120);
+  position: absolute;
+  top: 2px;
+  right: -20px;
+}
+
+.current-date .to {
+  top: 60px;
+}
+
+.resetInterval {
+  position: absolute;
+  top: 85px;
+  left: 100px;
+  z-index: 2;
 }
 
 .current-date .year {
@@ -60,12 +88,13 @@
   text-align: center;
   font-size: 20px;
   font-weight: 700;
+  cursor: pointer;
+  transition: background-color 200ms ease;
 }
 
 .days div:hover:not(.today) {
   background-color: #262626;
   border-color: #777;
-  cursor: pointer;
 }
 
 .days div:nth-child(7n),
@@ -78,12 +107,12 @@
   color: rgb(150, 5, 5);
 }
 
-.prev-month,
-.next-month {
+div.prev-month,
+div.next-month {
   opacity: 0.4;
 }
 
-div > .today {
+div .today:nth-child(1n) {
   background-color: #167e56;
 }
 
@@ -156,7 +185,13 @@ div > .today {
 
 .date-input-day,
 .date-input-month,
-.date-input-year {
+.date-input-year,
+.date-input-day-from,
+.date-input-month-from,
+.date-input-year-from,
+.date-input-day-to,
+.date-input-month-to,
+.date-input-year-to {
   width: 24px;
   border: none;
   outline: none;
@@ -169,7 +204,9 @@ div > .today {
 .date-input-day {
   margin-left: auto;
 }
-.date-input-year {
+.date-input-year,
+.date-input-year-from,
+.date-input-year-to {
   width: 40px;
 }
 
@@ -185,4 +222,13 @@ div > .today {
 
 .date-input-submit {
   margin-left: auto;
+}
+
+div.days div.chooseFrom {
+  background-color: rgb(187, 186, 243);
+  opacity: 1;
+}
+
+div.days div.chooseTo {
+  background-color: aquamarine;
 }
