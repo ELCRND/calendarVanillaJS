@@ -48,11 +48,11 @@ inputYear.value = SELECTED_DATE.getFullYear();
 const renderCalendar = () => {
   localStorage.setItem(
     "from",
-    `${inputIntervalDayFrom.value}-${inputIntervalMonthFrom.value}-${inputIntervalYearFrom.value}`
+    `${inputIntervalMonthFrom.value}-${inputIntervalDayFrom.value}-${inputIntervalYearFrom.value}`
   );
   localStorage.setItem(
     "to",
-    `${inputIntervalDayTo.value}-${inputIntervalMonthTo.value}-${inputIntervalYearTo.value}`
+    `${inputIntervalMonthTo.value}-${inputIntervalDayTo.value}-${inputIntervalYearTo.value}`
   );
   MONTH_DAYS.innerHTML = "";
   SELECTED_DATE.setDate(1);
@@ -89,7 +89,7 @@ const renderCalendar = () => {
 
   MONTH_DAYS.innerHTML = days;
   MONTH_DAYS.addEventListener("click", handleDaysClick);
-  MONTH_DAYS.addEventListener("contextmenu", setIntevalDate);
+  MONTH_DAYS.addEventListener("contextmenu", setIntevalDate); // доделать есть баг
   resetInterval.addEventListener("click", resetIntervalDate);
 
   const dateIntervalFromLS_from = new Date(localStorage.getItem("from"));
@@ -203,6 +203,7 @@ function setValueForInput(value) {
 }
 
 // function for right click
+// доделать есть баг
 function setIntevalDate(e) {
   e.preventDefault();
   const date = e.target.getAttribute("data-date").split("-");
